@@ -2,14 +2,14 @@
 # Carlos Ochoa Jose Perez
 
 # Crear carpeta para guardar todos los gráficos
-img_dir <- "c:/Users/josej/Documents/proyecto_final_estadisticas/imagenes"
+img_dir <- "c:/Users/josej/Documents/proyecto_final_estadisticas/imagenes"  # ruta corregida
 if (!dir.exists(img_dir)) {
   dir.create(img_dir, recursive = TRUE)
 }
 
 # Datos del lab
 
-Datos_ProyectoP7 <- read.delim("./Datos_ProyectoP7.txt", header = T) # nolint
+Datos_ProyectoP7 <- read.delim("c:/Users/josej/Documents/proyecto_final_estadisticas/Datos_ProyectoP7.txt", header = T) # nolint
 
 y <- Datos_ProyectoP7$y
 x1 <- Datos_ProyectoP7$x1
@@ -182,7 +182,4 @@ qqnorm(residuos, main = "QQ-Plot de los Residuos", pch = 19, col = "darkblue")
 qqline(residuos, col = "red", lwd = 2)
 dev.off()  # Cierra el dispositivo gráfico
 
-# Prueba de Shapiro-Wilk
-shapiro_result <- shapiro.test(residuos)
-print(shapiro_result)
 
