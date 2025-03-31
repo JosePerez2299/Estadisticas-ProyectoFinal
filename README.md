@@ -1,3 +1,12 @@
+**UNIVERSIDAD SIMÓN BOLÍVAR**
+
+Departamento de cómputo y estadística.
+
+CO-3321 \- Fundamento de estadística para ingenieros.  
+Carlos Ochoa 1410749 \- Jose Perez 1610882  
+Profesor Pedro Ovalles.  
+**Proyecto CO3321.**
+
 # Proyecto Final de Estadísticas
 
 Este proyecto contiene un conjunto de análisis estadísticos realizados con R para evaluar distintas variables de un estudio. Se incluyen análisis descriptivos, intervalos de confianza, análisis de gráficos de dispersión y correlación, pruebas de bondad de ajuste, análisis ANOVA, modelos de regresión lineal y procesos de predicción.
