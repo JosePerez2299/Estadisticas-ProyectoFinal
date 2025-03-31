@@ -13,7 +13,7 @@ img_dir <- "./imagenes"
 mat_cor <- cor(Datos_ProyectoP7[, c("y", "x1", "x2", "x3", "x4", "x5", "x7", "x8")])
 
 # Gráfico de dispersión y correlación
-png(filename = file.path(img_dir, "3_grafico_dispersion_correlacion.png"), width = 800, height = 800)
+png(filename = file.path(img_dir, "3_grafico_dispersion_correlacion_.png"), width = 800, height = 800)
 library(ggplot2)   # Librería instalada
 library(GGally)    # Librería instalada
 plot_obj <- ggpairs(Datos_ProyectoP7, 
