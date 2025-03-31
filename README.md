@@ -1,5 +1,7 @@
 # Proyecto Final de Estadísticas
 
+Este proyecto contiene un conjunto de análisis estadísticos realizados con R para evaluar distintas variables de un estudio. Se incluyen análisis descriptivos, intervalos de confianza, análisis de gráficos de dispersión y correlación, pruebas de bondad de ajuste, análisis ANOVA, modelos de regresión lineal y procesos de predicción.
+
 ## Descripción del Proyecto
 
 1. Datos  
@@ -24,10 +26,6 @@
    - Con los datos de "datos_predicción.txt" hacer una predicción de la variable y (con el mejor modelo) y generar un histograma, diagrama de cajas y resumen estadístico de los residuos de predicción (valor observado vs. predicción del modelo) para concluir respecto al poder predictivo del modelo.
    - Realizar un análisis de varianza para estudiar si existen diferencias entre las ventas medias de las empresas de acuerdo al estrato.
    - En el caso de conseguir diferencias significativas, realizar pruebas de medias para determinar cuáles son las medias que difieren.
-
-# Proyecto Final de Estadísticas
-
-Este proyecto contiene un conjunto de análisis estadísticos realizados con R para evaluar distintas variables de un estudio. Se incluyen análisis descriptivos, intervalos de confianza, análisis de gráficos de dispersión y correlación, pruebas de bondad de ajuste, análisis ANOVA, modelos de regresión lineal y procesos de predicción.
 
 ## Estructura del Proyecto
 
