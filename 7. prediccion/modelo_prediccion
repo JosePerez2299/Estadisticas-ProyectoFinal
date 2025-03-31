@@ -55,9 +55,9 @@ hist(y, main="Histograma de Observados", xlab="Valores Observados", col="lightco
 # Panel 2 (fila 1, columna 2): Histograma de Predicciones
 hist(predicciones, main="Histograma de Predicciones", xlab="Valores Predichos", col="skyblue", border="white")
 # Panel 3 (fila 2, columna 1): Boxplot de Observados
-boxplot(y, main="Boxplot de Observados", xlab="Observados", col="lightcoral")
+boxplot(y, main="Diagrama de Caja de Observados", xlab="Observados", col="lightcoral")
 # Panel 4 (fila 2, columna 2): Boxplot de Predicciones
-boxplot(predicciones, main="Boxplot de Predicciones", xlab="Predicciones", col="skyblue")
+boxplot(predicciones, main="Diagrama de Caja de Predicciones", xlab="Predicciones", col="skyblue")
 dev.off()
 
 # Generar resúmenes de predicciones y de valores observados
@@ -84,5 +84,5 @@ print(summary(residuos))
 png(filename = file.path(img_dir, "7_residuos_combined.png"), width = 800, height = 600)
 par(mfrow = c(1,2))
 hist(residuos, main = "Histograma de Residuos", xlab = "Residuos", col = "lightgreen", border = "black")
-boxplot(residuos, main = "Boxplot de Residuos", xlab = "Residuos", col = "orange")
+boxplot(residuos, main = "Diagrama de Caja de Residuos", xlab = "Residuos", col = "orange")
 dev.off()

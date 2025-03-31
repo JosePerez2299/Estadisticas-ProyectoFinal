@@ -16,7 +16,7 @@ print(table(x6))
 
 
 print(boxplot(y ~ x6,
-    main = "Boxplot de los estratos", 
+    main = "Diagrama de Caja de los estratos", 
     xlab = "Estrato", 
     ylab = "Valores de y", 
     col = rainbow(nlevels(fact))
