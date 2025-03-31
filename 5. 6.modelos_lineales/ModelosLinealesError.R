@@ -2,7 +2,10 @@
 Datos_ProyectoP7 <- read.delim("./Datos_ProyectoP7.txt", header = TRUE)  # nolint
 
 y  <- Datos_ProyectoP7$y
+x1 <- Datos_ProyectoP7$x1
+x2 <- Datos_ProyectoP7$x2
 x3 <- Datos_ProyectoP7$x3
+x4 <- Datos_ProyectoP7$x4
 x5 <- Datos_ProyectoP7$x5
 x7 <- Datos_ProyectoP7$x7
 x8 <- Datos_ProyectoP7$x8

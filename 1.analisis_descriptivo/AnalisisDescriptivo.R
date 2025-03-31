@@ -42,6 +42,11 @@ boxplot(x7, col = "white", horizontal = F, xlab = "x7")
 boxplot(x8, col = "gray", horizontal = F, xlab = "x8")
 dev.off()
 
+
+png(filename = file.path(img_dir, "1_diagramas_barra.png"), width = 800, height = 600)
+par(mfrow=c(1,1))
+barplot(table(x6), main = "Diagrama de barra de 'x6'", xlab = "x6", ylab = "Frecuencia", col = "lightblue")
+dev.off()
 # Analisis descriptivo
 
 media <- c(mean(y), mean(x1), mean(x2), mean(x3), mean(x4), mean(x5), mean(x7), mean(x8))
