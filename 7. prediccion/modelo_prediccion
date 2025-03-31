@@ -1,0 +1,88 @@
+# Leer los datos (ajustando la ruta relativa)
+datos_prediccion <- read.delim("./datos_predicción.txt", sep = " ", header = TRUE)  # nolint
+
+y <- datos_prediccion$y
+x1 <- datos_prediccion$x1
+x2 <- datos_prediccion$x2
+x3 <- datos_prediccion$x3
+x4 <- datos_prediccion$x4
+x5 <- datos_prediccion$x5
+x6 <- datos_prediccion$x6
+x7 <- datos_prediccion$x7
+x8 <- datos_prediccion$x8
+
+# Definir el modelo final, se excluyen las variables x6 pues es categórica y no se incluye en el modelo final
+modelo_final <- lm(y ~ x1 + x2 + x3 + x4 + x5  + x7 + x8)
+
+# Se elimina la variable x4, su p-valor es el mayor: 0.759
+modelo_final <- lm(y ~ x1 + x2 + x3 + x5  + x7 + x8)
+
+# Se elimina la  variable x5, su p-valor es el mayor: 0.438
+
+modelo_final <- lm(y ~ x1 + x2 + x3 + x7 + x8)
+
+# Se elimina la variable x3, su p-valor es el mayor: 0.2027
+
+modelo_final <- lm(y ~ x1 + x2 + x7 + x8)
+
+# Se elimina la variable x2, su p-valor es el mayor: 0.200272
+
+modelo_final <- lm(y ~ x1 + x7 + x8)
+
+# Se elimina la variable x1, su p-valor es el mayor: 0.242951
+
+modelo_final <- lm(y ~ x7 + x8)
+
+# Se eliminan las variables x8, su p-valor es el mayor: 0.24105
+
+modelo_final <- lm(y ~ x7)
+
+# Se consigue un modelo ajustado
+# Resumen del modelo final
+print(summary(modelo_final))
+
+# Generar predicciones con el mejor modelo
+predicciones <- predict(modelo_final, datos_prediccion)
+
+# Definir el directorio para guardar gráficos
+img_dir <- "./imagenes"
+
+# Actualizar gráfico combinado para comparar Datos Originales y Predicciones:
+png(filename = file.path(img_dir, "7_predicciones_combined.png"), width = 800, height = 600)
+par(mfrow = c(2,2))
+# Panel 1 (fila 1, columna 1): Histograma de Observados
+hist(y, main="Histograma de Observados", xlab="Valores Observados", col="lightcoral", border="white")
+# Panel 2 (fila 1, columna 2): Histograma de Predicciones
+hist(predicciones, main="Histograma de Predicciones", xlab="Valores Predichos", col="skyblue", border="white")
+# Panel 3 (fila 2, columna 1): Boxplot de Observados
+boxplot(y, main="Boxplot de Observados", xlab="Observados", col="lightcoral")
+# Panel 4 (fila 2, columna 2): Boxplot de Predicciones
+boxplot(predicciones, main="Boxplot de Predicciones", xlab="Predicciones", col="skyblue")
+dev.off()
+
+# Generar resúmenes de predicciones y de valores observados
+resumen_predicciones <- summary(predicciones)
+resumen_observados <- summary(y)
+
+# Crear tabla comparativa
+tabla_comparativa <- data.frame(
+  Estadística = names(resumen_predicciones),
+  Predicciones = as.numeric(resumen_predicciones),
+  Observados = as.numeric(resumen_observados)
+)
+
+# Imprimir tabla comparativa
+print("Tabla comparativa de resúmenes:")
+print(tabla_comparativa)
+
+# Residuos
+residuos <- resid(modelo_final)
+print("Resumen de residuos:")
+print(summary(residuos))
+
+# Agregar gráfico combinado para residuos:
+png(filename = file.path(img_dir, "7_residuos_combined.png"), width = 800, height = 600)
+par(mfrow = c(1,2))
+hist(residuos, main = "Histograma de Residuos", xlab = "Residuos", col = "lightgreen", border = "black")
+boxplot(residuos, main = "Boxplot de Residuos", xlab = "Residuos", col = "orange")
+dev.off()

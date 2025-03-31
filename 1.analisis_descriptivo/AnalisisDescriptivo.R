@@ -30,7 +30,7 @@ dev.off()
 
 # Diagramas de caja
 
-png(filename = file.path(img_dir, "2_diagramas_caja.png"), width = 800, height = 600)
+png(filename = file.path(img_dir, "1_diagramas_caja.png"), width = 800, height = 600)
 par(mfrow = c(2, 4))
 boxplot(y, col = "yellow", horizontal = F, xlab = "y")
 boxplot(x1, col = "blue", horizontal = F, xlab = "x1")

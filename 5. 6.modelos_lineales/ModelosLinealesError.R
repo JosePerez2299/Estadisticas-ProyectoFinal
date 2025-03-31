@@ -36,21 +36,27 @@ ajustados <- fitted(modelo_final)
 img_dir <- "./imagenes"
 
 # Gráfico de residuos vs valores ajustados
-png(filename = file.path(img_dir, "5_residuos_vs_valores_ajustados.png"), width = 800, height = 600)
+png(filename = file.path(img_dir, "5-6_residuos_vs_valores_ajustados.png"), width = 800, height = 600)
 plot(ajustados, residuos, main = "Residuos vs Valores Ajustados", 
      xlab = "Valores Ajustados", ylab = "Residuos", pch = 19, col = "blue")
 abline(h = 0, col = "red", lwd = 2)
 dev.off()
 
 # Histograma de residuos
-png(filename = file.path(img_dir, "6_histograma_residuos.png"), width = 800, height = 600)
+png(filename = file.path(img_dir, "5-6_histograma_residuos.png"), width = 800, height = 600)
 hist(residuos, main = "Histograma de Residuos", xlab = "Residuos", 
      col = "lightgreen", border = "black")
 dev.off()
 
 # QQ-plot de residuos
-png(filename = file.path(img_dir, "7_qqplot_residuos.png"), width = 800, height = 600)
+png(filename = file.path(img_dir, "5-6_qqplot_residuos.png"), width = 800, height = 600)
 qqnorm(residuos, main = "QQ-Plot de Residuos", pch = 19, col = "darkblue")
 qqline(residuos, col = "red", lwd = 2)
 dev.off()
 
+# Guardar los 4 gráficos de diagnóstico del modelo final
+png(filename = file.path(img_dir, "5-6_diagnosticos_modelo_final.png"), width = 800, height = 800)
+par(mfrow = c(2, 2))
+plot(modelo_final)
+dev.off()
+print(summary(modelo_final))
