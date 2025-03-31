@@ -15,7 +15,12 @@ hist(y, plot = FALSE)
 r <- 2
 frec_y <- c(2, 11, 17, 31, 22, 12, 5)
 png(filename = file.path(img_dir, "4_qqnorm_ajuste_bondad.png"), width = 800, height = 600)
-qqnorm(y, main = "QQ-Norm para Ajuste de Bondad", pch = 19, col = "darkblue")
+qqnorm(y, 
+       main = "Gráfico QQ para Ajuste de Bondad",  # Título en español
+       xlab = "Cuantiles teóricos",               # Etiqueta eje X en español
+       ylab = "Cuantiles de la muestra",           # Etiqueta eje Y en español
+       pch = 19, 
+       col = "darkblue")
 qqline(y, col = "red", lwd = 2)
 dev.off()
 
